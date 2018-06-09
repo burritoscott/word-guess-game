@@ -1,0 +1,34 @@
+body {
+    font-family: 'Amatic SC', cursive;
+    font-size: 250%;
+    background-image: url(../images/background-colorsplash.jpg);
+    background-attachment: relative;
+    background-repeat: no-repeat;
+    background-position-y: 50px;
+    background-size: 100%;
+}
+.container {
+    text-align: center;
+}
+.title {
+    font-family: 'Amatic SC', cursive;
+    font-size: 500%;
+}
+.subtitle{
+    color: red;
+    -webkit-animation: mymove 10s infinite;
+    animation: mymove 10s infinite;
+    font-size: 250%;
+    text-shadow: 4px 1px;
+}
+@keyframes mymove{
+    95% {color: blue;}
+    75% {color: orange;}
+    55% {color: yellow;}
+    35% {color: green;}
+    15% {color: pink;}
+    
+}#whatColor {
+    word-spacing: 25px;
+    font-size: 150%;
+}
