@@ -3,41 +3,35 @@
 //find out how to apply that letter to the word when it is guessed correctly
 
 // // array containing all of the letters
-var words = ["light blue", "magenta", "tangerine", "lavender"];
-var answerArray = [];
+var colorArray = ["light blue", "magenta", "tangerine", "lavender"];
+
+
+//variables being referenced id's in html
 var wins = 0;
 var losses = 0;
 var numGuessLeft = 9;
-var guesses = [];
+
+var wins_span = document.querySelector("#wins");
+var losses_span = document.querySelector("#losses");
+var numGuessLeft_span = document.querySelector("#numGuessLeft");
+
+// wins_span.innerText = wins;
+// losses_span.innerText = losses;
+// numGuessLeft_span = numGuessLeft;
+
 
 function playGame(event){
-    var computerWord = Math.floor(Math.random()*words.length);
-    var computerLetter = words[computerWord];
-    var userChoice = event.key;
-    
-    for(var i =0; i<computerWord.length; i++){
-        guesses[i] = "_";
-    }
-    var remainingLetters = word.length;
-    
-    document.querySelector("#colorWord").innerText = computerLetter;
-    document.querySelector("#lettersGuessed").innerText = userChoice;
+    var randomColorIndex = Math.floor(Math.random()*colorArray.length);
+    var randomColor = colorArray[randomColorIndex];
+    var userGuess = event.key;
 
-    // if (userChoice == computerLetter){
-    //     wins++;
-    //     document.querySelector("#wins").innerText = wins;
-    //     numGuessLeft = 9;
-    //     document.querySelector("#numGuess").innerText = numGuessLeft;
-    //     document.querySelector("#lettersGuessed").innerText = guesses;
-    // }else{
-    //     numGuessLeft--;
-    //     document.querySelector("#numGuess").innerText = numGuessLeft;
-    //         if (numGuessLeft == 0){
-    //         losses++;
-    //         document.querySelector("#loses").innerText = losses;
-    //         numGuessLeft = 9;
-    //         document.querySelector("#numGuess").innerText = numGuessLeft;
-    //         }
-    // } 
+    document.querySelector("#lettersGuessed").innerText = userGuess;
+    // code that sets up the index for the random color that is chosen
+    var answerArray = [];
+    for (i=0; i<randomColor.length; i++){
+        answerArray[i] = "_";
+    }
+    var remainingLetters = randomColor.length;
+
 }
 document.onkeyup = playGame;
