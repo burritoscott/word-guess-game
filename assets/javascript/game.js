@@ -32,6 +32,6 @@ function playGame(event){
         answerArray[i] = "_";
     }
     var remainingLetters = randomColor.length;
-
+    
 }
 document.onkeyup = playGame;
